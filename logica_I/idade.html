@@ -1,0 +1,24 @@
+<script>
+//descobrir a diferença de idades
+    function pulaLinha() {
+        document.write('<br>');
+    }
+    function titulo(imprimir) {
+        document.write('<h1>' + imprimir + '</h1>');
+        pulaLinha();
+    }
+    function texto(mostrar) {
+        document.write(mostrar);
+        pulaLinha();
+    }
+    var minha = 19;
+    var irma = 14;
+    var minhaNas = 2022 - minha;
+    var irmaNas = 2022 - irma;
+    titulo('Nossa diferença de idade é...');
+    texto('A minha idade é: ' + minha + ' anos');
+    texto('A idade de minha irmã é: ' + irma + ' anos');
+    texto('Nossa diferença de idade é de: ' + (minha - irma) + ' anos.');
+    texto('E eu nasci no ano: ' + minhaNas + ', e a minha irmã no ano: ' + irmaNas);
+
+</script>

@@ -1,0 +1,16 @@
+<script>
+    //descobrir quantas gerações existem
+    function pulaLinha() {
+        document.write('<br>');
+    }
+    function print(imprimir) {
+        document.write(imprimir);
+        pulaLinha();
+    }
+    var colo = 1500;
+    var ano = 2022;
+    var conta = ano - colo;
+    print('<h1>AS GERAÇÕES EXISTENTES</h1>')
+    print('O Brasil foi colonizado a partir do ano ' + colo + ' e desde então se passaram: ' + conta + ' anos.')
+    print('O que nos mostrar que já houve: ' + Math.round(conta/28) + ' gerações.')
+</script>

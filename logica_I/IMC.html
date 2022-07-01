@@ -1,0 +1,43 @@
+<script>
+    //base para próximas
+    function pulaLinha() {
+        document.write('<br>');
+    }
+    function print(imprimir) {
+        document.write(imprimir);
+        pulaLinha();
+    }
+    //parametros pode ser mais de um
+    function calculaIMC(altura, peso) {
+        //ou add o returno para a conta logo
+        return peso/(altura * altura);
+    }
+    //var eu = calculaIMC(65, 1.60);
+    //var love = calculaIMC(75, 1.69);
+    //simplificado
+    //var totalImc = calculaIMC(65, 1.60) + calculaIMC(75, 1.69);
+
+    //print('O meu IMC é: ' + eu);
+    //print('O IMC do meu namorado é: ' + love);
+    //print('A soma dos Imcs é: ' + totalImc);
+
+//INTERAGINDO COM USUÁRIO
+    var nome = prompt('Digite o seu nome:');
+    var alturaInformada = prompt(nome + ', informe a sua altura:');
+    var pesoInformado = prompt(nome + ', informe o seu peso: ');
+    var imc = calculaIMC(alturaInformada, pesoInformado);
+    print(nome + ' o seu IMC é: ' + Math.round(imc));
+    //menor
+    if (imc < 18.5){
+        print('Você está abaixo do recomendado pela OMS');
+    }
+    //media entre 18 e 35
+    if (imc >= 18.5 && imc <= 35){
+        //&& = and
+            print('Seu IMC está ótimo!')
+    }
+    //maior 
+    if (imc > 35){
+        print('Você muito acima do recomendado pela OMS');
+    }
+</script>

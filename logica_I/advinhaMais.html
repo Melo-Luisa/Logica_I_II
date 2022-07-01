@@ -1,0 +1,61 @@
+<meta charset="UTF-8">
+<input/>
+<!--entrada-->
+<button> Compare com o meu segredo</button>
+<script>
+    function sorteia(){
+        return Math.round(Math.random() * 10);
+    }
+    function sorteiaNumeros (quantidade){
+        var segredos = [];
+        var num = 1;
+        while(num <= quantidade){
+            var achou = false;
+            var numeAle = sorteia();
+            if(numeAle !== 0){
+                 //não add na lista
+            for(var posicao = 0; posicao <segredos.length; posicao++){
+                if(segredos[posicao] == numeAle){
+                    achou = true;
+                    break;
+                }
+            }
+            //empurrar - add
+            if (achou == falso){
+                segredos.push(numeAle());
+                num++;
+            }
+            }
+        }
+        return segredos;
+    }
+    //listas - array
+    var segredos = sorteiaNumeros(3);
+
+    //query recebe parametro para levar o valor do botão na var
+    var input = document.querySelector('input');
+    input.focus();
+
+    function verifica() {
+        var achou = false;
+        for (var posição = 0; posição < segredos.length; posição++){
+                //            valor
+                if(input.value == segredos[posição]) {
+                alert('Você Acertou!');
+                achou = true;
+                break;
+            }
+        }
+        if (achou == false){
+            alert('Você errou!');
+            }
+        //limpar o campo
+        input.value = '';
+        input.focus();
+    }
+    var button = document.querySelector('button');
+    //        no clicar
+    button.onclick = verifica;
+    // () tem efeito // sem ele, ele não verifica
+
+</script>

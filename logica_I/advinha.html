@@ -1,0 +1,29 @@
+<meta charset = UTF-8>
+<script>
+    //base para próximas
+    function pulaLinha() {
+        document.write('<br>');
+    }
+    function print(imprimir) {
+        document.write(imprimir);
+        pulaLinha();
+    }
+    //round - arrendondar / ramdom - aleatório
+    var numeroPensado = Math.round(Math.random() * 10);
+    cont = 1;
+    while(cont <= 3){
+        var chute = parseInt(prompt('Digite o seu chute:'));
+
+        if (chute == numeroPensado){
+            print('Você acertou!, O número pensado era: ' + numeroPensado);
+            //parar loop's (serve para for tbm)
+            break;
+        }
+        else{
+            print('Você errou!');
+        }
+        cont++;
+    }
+    print('fim')
+
+</script>

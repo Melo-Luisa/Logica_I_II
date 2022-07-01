@@ -1,0 +1,64 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var raio = 10;
+    var xAle;
+    var yAle;
+
+    //para fazer circulo
+    function desenhaCirculo(x, y, raio, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+    //limpar comandos anteriores
+    function limpaTela(){
+        pincel.clearRect(0, 0, 600, 400);
+    }
+    //desenhar os alvos
+    function desenhaAlvo(x, y){
+        desenhaCirculo(x,y, raio + 20, 'red'); // maior círculo
+        desenhaCirculo(x,y, raio + 10, 'white');
+        desenhaCirculo(x,y, raio, 'red'); // menor circulo
+    }
+    //fazer o alvo se mover aleatório
+    function sorteiaFunção(maximo){
+        return Math.floor(Math.random() * maximo);
+    }
+    //mostrar a ultima função
+    function atualizaTela(){
+        limpaTela();
+        xAle = sorteiaFunção(600);
+        yAle = sorteiaFunção(400);
+        desenhaAlvo(xAle,yAle);
+    }
+    //intervalo
+    setInterval(atualizaTela, 1000);
+
+    //acertar o alvo, acredito que falte algumas coisas
+    //evnto - ao clicar no onclick ali embaixo
+    function dispara(evento) {
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+
+        if((x > xAle - raio)
+            && (x < xAle + raio) 
+                && (y > yAle - raio)
+                    && (y < yAle + raio)){
+            alert('Acertou');
+        }
+    }
+    
+    //ao clicar acerta a última função
+    tela.onclick = dispara;
+
+</script>

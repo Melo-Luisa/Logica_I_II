@@ -1,0 +1,32 @@
+<script>
+     //base para próximas
+     function pulaLinha() {
+        document.write('<br>');
+    }
+    function print(imprimir) {
+        document.write(imprimir);
+        pulaLinha();
+    }
+    // JS retorna os prompt em string
+    //parseInt(transforma em número)
+    var vitorias = parseInt(prompt('Entre com o número de vitórias'));
+    var empates = parseInt(prompt('Entre com o número de empates: '));
+    var pontos = (vitorias * 3) + empates;
+    print('Os pontos do seu time é: ' + pontos);
+    print('Comparando...');
+    print('> A pontuação do seu time no ano anterior foi de: 28 pontos');
+    print('Seu status :')
+    //elif a principio não funciona
+    if (pontos > 28) {
+        print('Melhor do que o ano passado!');
+    } 
+
+    if (pontos < 28){
+         print('Pior do que o ano passado!');
+    }
+
+    if (pontos == 28){
+        print('Igual ao ano passado.');
+    }
+    print('FIM');
+</script>
